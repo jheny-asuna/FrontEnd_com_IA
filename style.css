@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+  color: #f5f5f1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  line-height: 1.4;
+}
+
+main {
+  width: min(1100px, 94%);
+  margin: 0 auto;
+  padding: 3rem 0 2rem;
+}
+
+.profile-selection {
+  text-align: center;
+}
+
+.profile-selection h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.25rem;
+  justify-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.profile {
+  background: linear-gradient(180deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.03) 100%);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 205px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.profile:hover,
+.profile:focus-within {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(229,9,20,0.7);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+}
+
+.profile figure {
+  margin: 0;
+}
+
+.profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: .8rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+}
+
+figcaption {
+  color: #f5f5f1;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 520px) {
+  .profile-selection h1 {
+    font-size: 2rem;
+  }
+
+  .profiles {
+    gap: 0.85rem;
+  }
+
+  .profile {
+    padding: 0.75rem;
+  }
+}
